@@ -50,7 +50,9 @@ public class JobController {
         if(errors.hasErrors() ){
             System.out.println("ERROR   ***********************");
             System.out.println(errors);
-            return "redirect:/job/add";
+            model.addAttribute("errors", errors);
+            //return "redirect:/job/add";
+            return "new-job";
         }
 
         System.out.println( jobForm.getName() );
